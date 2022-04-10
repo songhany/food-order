@@ -25,9 +25,9 @@ public class ApplicationConfig {
 
     @Bean(name = "dataSource")
     public DataSource dataSource() {
-        String RDS_ENDPOINT = "";
-        String USERNAME = "";
-        String PASSWORD = "";
+        String RDS_ENDPOINT = "foodash.chg5qhypiwcf.us-east-2.rds.amazonaws.com";
+        String USERNAME = "admin";
+        String PASSWORD = "12345678";
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://" + RDS_ENDPOINT + ":3306/onlineOrder?createDatabaseIfNotExist=true&serverTimezone=UTC");
