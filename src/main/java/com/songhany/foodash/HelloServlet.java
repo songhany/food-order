@@ -52,33 +52,19 @@ public class HelloServlet extends HttpServlet {
         response.getWriter().print(mapper.writeValueAsString(customer));
     }
 
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-//        // Read customer information from request body
-//        JSONObject jsonRequest = new JSONObject(IOUtils.toString(request.getReader()));
-//        String email = jsonRequest.getString("email");
-//        String firstName = jsonRequest.getString("first_name");
-//        String lastName = jsonRequest.getString("last_name");
-//        int age = jsonRequest.getInt("age");
-//
-//        // Print customer information to IDE console
-//        System.out.println("Email is: " + email);
-//        System.out.println("First name is: " + firstName);
-//        System.out.println("Last name is: " + lastName);
-//        System.out.println("Age is: " + age);
-//        // Return status = ok as response body to the client
-//        response.setContentType("application/json");
-//        JSONObject jsonResponse = new JSONObject();
-//        jsonResponse.put("status", "ok");
-//        response.getWriter().print(jsonResponse);
-//    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        // Read customer information from request body
+        JSONObject jsonRequest = new JSONObject(IOUtils.toString(request.getReader()));
+        String email = jsonRequest.getString("email");
+        String firstName = jsonRequest.getString("first_name");
+        String lastName = jsonRequest.getString("last_name");
+        int age = jsonRequest.getInt("age");
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {  // above steps be simplified with Jackson
-        ObjectMapper objectMapper = new ObjectMapper();
-        Customer customer = objectMapper.readValue(IOUtils.toString(request.getReader()), Customer.class);
-
-        System.out.println(customer.getEmail());
-        System.out.println(customer.getFirstName());
-        System.out.println(customer.getLastName());
+        // Print customer information to IDE console
+        System.out.println("Email is: " + email);
+        System.out.println("First name is: " + firstName);
+        System.out.println("Last name is: " + lastName);
+        System.out.println("Age is: " + age);
         // Return status = ok as response body to the client
         response.setContentType("application/json");
         JSONObject jsonResponse = new JSONObject();
@@ -86,6 +72,20 @@ public class HelloServlet extends HttpServlet {
         response.getWriter().print(jsonResponse);
     }
 
-    public void destroy() {
-    }
+//    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {  // above steps be simplified with Jackson
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        Customer customer = objectMapper.readValue(IOUtils.toString(request.getReader()), Customer.class);
+//
+//        System.out.println(customer.getEmail());
+//        System.out.println(customer.getFirstName());
+//        System.out.println(customer.getLastName());
+//        // Return status = ok as response body to the client
+//        response.setContentType("application/json");
+//        JSONObject jsonResponse = new JSONObject();
+//        jsonResponse.put("status", "ok");
+//        response.getWriter().print(jsonResponse);
+//    }
+//
+//    public void destroy() {
+//    }
 }

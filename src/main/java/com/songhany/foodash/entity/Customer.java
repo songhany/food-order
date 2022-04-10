@@ -1,12 +1,28 @@
 package com.songhany.foodash.entity;
 
-public class Customer {
+import javax.persistence.*;
+import java.io.Serializable;
 
+@Entity
+@Table(name = "customers")
+public class Customer implements Serializable  {
+
+    private static final long serialVersionUID = 2652327633296064143L;
+
+    @Id
     private String email;
+
     private String firstName;
+
     private String lastName;
+
     private String password;
+
     private boolean enabled;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private Cart cart;
 
     public String getEmail() {
         return email;
@@ -41,11 +57,21 @@ public class Customer {
     }
 
     public boolean isEnabled() {
-        return  enabled;
+        return enabled;
     }
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
 }
+
+
 
