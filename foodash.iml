@@ -84,5 +84,9 @@
     <orderEntry type="library" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.18" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.5.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.5.2" level="project" />
   </component>
 </module>
