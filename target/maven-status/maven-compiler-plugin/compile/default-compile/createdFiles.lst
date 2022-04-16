@@ -1,6 +1,8 @@
 com/songhany/foodash/entity/Cart.class
 com/songhany/foodash/controller/MenuInfoController.class
 com/songhany/foodash/entity/MenuItem.class
+com/songhany/foodash/dao/MenuInfoDao.class
+com/songhany/foodash/service/MenuInfoService.class
 com/songhany/foodash/entity/OrderItem.class
 com/songhany/foodash/controller/SignUpController.class
 com/songhany/foodash/service/CustomerService.class
