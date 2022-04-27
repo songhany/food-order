@@ -1,6 +1,10 @@
 import { Layout, Typography } from "antd";
 import { useState } from "react";
+import "./App.css";
+import FoodList from "./components/FoodList";
 import LoginForm from "./components/LoginForm";
+import MyCart from "./components/MyCart";
+import SignupForm from "./components/SignupForm";
 
 const { Header, Content } = Layout;
 const { Title } = Typography;
@@ -16,8 +20,9 @@ function App() {
             level={2}
             style={{ color: "white", lineHeight: "inherit", marginBottom: 0 }}
           >
-            Foodash
+            food order
           </Title>
+          <div>{authed ? <MyCart /> : <SignupForm />}</div>
         </div>
       </Header>
       <Content
@@ -28,7 +33,7 @@ function App() {
         }}
       >
         {authed ? (
-          <div>content placeholder</div>
+          <FoodList />
         ) : (
           <LoginForm onSuccess={() => setAuthed(true)} />
         )}
