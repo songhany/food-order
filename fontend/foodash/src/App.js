@@ -20,7 +20,7 @@ function App() {
             level={2}
             style={{ color: "white", lineHeight: "inherit", marginBottom: 0 }}
           >
-            food order
+            Food Order -  Songhan Yu
           </Title>
           <div>{authed ? <MyCart /> : <SignupForm />}</div>
         </div>
@@ -38,6 +38,7 @@ function App() {
           <LoginForm onSuccess={() => setAuthed(true)} />
         )}
       </Content>
+      created by Songhan Yu
     </Layout>
   );
 }
